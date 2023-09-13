@@ -14,7 +14,6 @@ function UpdateEmployeeComponent()
     useEffect(() => {
         EmployeeService.getEmployeeById(id).then((res) => {
             let employee=(res.data);
-            // console.log(employee);
             setEmailId(employee.emailId);
             setLastName(employee.lastName);
             setFirstName(employee.firstName);
@@ -26,12 +25,11 @@ function UpdateEmployeeComponent()
         // e.preventDefault();
         const employee = {id, firstName, lastName, emailId };
         console.log("employee => " + JSON.stringify(employee));
-        alert("You have hit the save button");
        if(EmployeeService.createEmployee(employee))
        {
         navigate('/');  
        }
-        // navigate('/');      
+             
     }
 
     const changeFirstNameHolder = (event) => {
